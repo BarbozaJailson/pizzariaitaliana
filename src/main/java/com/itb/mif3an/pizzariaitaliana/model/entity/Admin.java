@@ -1,4 +1,11 @@
 package com.itb.mif3an.pizzariaitaliana.model.entity;
 
-public class Admin extends Usuario{
+
+
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+
+@Entity
+@DiscriminatorValue(value = "ADMIN")
+public class Admin extends Usuario {
 }
