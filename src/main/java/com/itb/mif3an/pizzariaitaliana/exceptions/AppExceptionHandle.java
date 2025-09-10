@@ -25,19 +25,19 @@ public class AppExceptionHandle {
 
     // Erro 404 (Url mal formada pelo front)
     @ExceptionHandler(NotFound.class)
-    public ResponseEntity<Object> handleNotFound(BadRequest ex){
+    public ResponseEntity<Object> handleNotFound(NotFound ex){
         return buildErrorResponse(ex, HttpStatus.NOT_FOUND, ex.getMessage());
     }
 
     // Erro 403 (Acesso proibido)
     @ExceptionHandler(Forbidden.class)
-    public ResponseEntity<Object> handleForbidden(BadRequest ex){
+    public ResponseEntity<Object> handleForbidden(Forbidden ex){
         return buildErrorResponse(ex, HttpStatus.FORBIDDEN, ex.getMessage());
     }
 
     // Erro 500 (Problemas no servidor)
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Object> handleException(BadRequest ex){
+    public ResponseEntity<Object> handleException(Exception ex){
         return buildErrorResponse(ex, HttpStatus.INTERNAL_SERVER_ERROR, "Ocorreu um erro interno no servidor.");
     }
 

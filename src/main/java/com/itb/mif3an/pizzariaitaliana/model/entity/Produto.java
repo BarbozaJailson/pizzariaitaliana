@@ -1,5 +1,6 @@
 package com.itb.mif3an.pizzariaitaliana.model.entity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -29,7 +30,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Produto {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,10 +40,10 @@ public class Produto {
     private String descricao;
 	@Column(nullable = true, columnDefinition = "DECIMAL(5,2)")
 	@JsonDeserialize(using = BigDecimalDeserializer.class)
-    private double valorVenda;
+    private BigDecimal valorVenda;
     @Column(nullable = true, columnDefinition = "DECIMAL(5,2)")
     @JsonDeserialize(using = BigDecimalDeserializer.class)
-    private double valorCompra;
+    private BigDecimal valorCompra;
     @Column(nullable = true, length = 20)
     private String tipo;
     @JsonIgnore
