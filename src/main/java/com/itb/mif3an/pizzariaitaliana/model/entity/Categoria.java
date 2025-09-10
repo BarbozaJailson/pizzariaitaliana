@@ -36,7 +36,7 @@ public class Categoria {
     private boolean codStatus;
 	
 	
-	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
 	private List<Produto> produtos;
 
 }
